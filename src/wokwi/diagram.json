@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "author": "Vitor Lopes Romão",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": -4.76, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -51.6,
+      "left": 330.2,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -51.6,
+      "left": 291.8,
+      "attrs": { "color": "yellow" }
+    },
+    { "type": "wokwi-hc-sr04", "id": "ultrasonic1", "top": -142.5, "left": -32.9, "attrs": {} },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "ldr1",
+      "top": 99.2,
+      "left": -210.4,
+      "attrs": {}
+    },
+    { "type": "wokwi-relay-module", "id": "relay1", "top": 67.4, "left": 153.6, "attrs": {} },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 52.8,
+      "left": 297.05,
+      "rotate": 90,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 52.8,
+      "left": 335.45,
+      "rotate": 90,
+      "attrs": { "value": "1000" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "ldr1:VCC", "esp:3V3", "gray", [ "h9.6", "v-86.4" ] ],
+    [ "ldr1:GND", "esp:GND.2", "#8f4814", [ "h19.2", "v-134.8", "h134.4", "v38.4" ] ],
+    [ "ldr1:DO", "esp:14", "orange", [ "h0" ] ],
+    [ "relay1:VCC", "esp:3V3", "gray", [ "h-28.8", "v-105.6", "h-153.6", "v48" ] ],
+    [ "relay1:GND", "esp:GND.2", "orange", [ "h-38.4", "v-67.6" ] ],
+    [ "relay1:IN", "esp:18", "#8f4814", [ "h0" ] ],
+    [ "relay1:COM", "esp:5V", "gray", [ "h68.4", "v133", "h-336.15" ] ],
+    [ "relay1:NO", "led1:A", "#8f4814", [ "h0" ] ],
+    [ "relay1:NC", "led2:A", "#8f4814", [ "h0" ] ],
+    [ "led1:C", "esp:GND.2", "orange", [ "v0" ] ],
+    [ "led2:C", "esp:GND.2", "orange", [ "v0" ] ],
+    [ "ultrasonic1:VCC", "esp:5V", "gray", [ "v19.2", "h-67.2", "v230.4" ] ],
+    [ "ultrasonic1:GND", "esp:GND.2", "#8f4814", [ "v19.2", "h66", "v57.6" ] ],
+    [ "ultrasonic1:TRIG", "esp:5", "orange", [ "v9.6", "h95.6", "v201.6" ] ],
+    [ "ultrasonic1:ECHO", "esp:17", "orange", [ "v9.6", "h85.6", "v163.2" ] ]
+  ],
+  "dependencies": {}
+}
