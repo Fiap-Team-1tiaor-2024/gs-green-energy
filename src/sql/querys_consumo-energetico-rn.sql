@@ -90,7 +90,7 @@ GROUP BY
 ORDER BY 
     ANO, localidade;
     
-
+COMMIT;
 
 
 
