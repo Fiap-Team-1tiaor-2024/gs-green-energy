@@ -85,7 +85,7 @@ Prover insights estatísticos sobre o consumo médio, consumo total e demanda co
 Filtrar dados regionais para entender o impacto de fatores geográficos no consumo energético.
 
 ## 🔗 Link da base de dados
-Link da base de dados proporcionada pelo Governo: [text](https://dados.gov.br/dados/conjuntos-dados/consumo-energetico-por-campus)
+Link da base de dados proporcionada pelo Governo: [Base de dados](https://dados.gov.br/dados/conjuntos-dados/consumo-energetico-por-campus)
 
 ## 🚀 Como Usar
 Crie a tabela consumo_energetico_rn no Oracle SQL Developer usando o script de criação fornecido.
