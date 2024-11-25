@@ -4,7 +4,7 @@ import fakeRestDataProvider from "ra-data-fakerest";
 import data from "./data.json";
 import data from "./habitat.json";
 
-const apiUrl = 'http://127.0.0.1:8000/api';
+const apiUrl = 'http://localhost:8000/api';
 const httpClient = fetchUtils.fetchJson;
 
 export const dataProvider: DataProvider = {
