@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Gerenciador de Energia Residencial</title>
+</head>
+<body>
+    <h1>Consumo de Energia Residencial</h1>
+    <h2>Consumo nas Últimas 24 Horas</h2>
+    <ul>
+        {% for item in consumo %}
+            <li>{{ item.data_hora }} - {{ item.consumo_kwh }} kWh</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Tarifas de Energia Atuais</h2>
+    <ul>
+        {% for tarifa in tarifas %}
+            <li>{{ tarifa.fonte.nome }} - R$ {{ tarifa.valor_tarifa }} ({{ tarifa.data_hora }})</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Melhor Fonte de Energia</h2>
+    <p>Fonte: {{ melhor_fonte.fonte.nome }}</p>
+    <p>Tarifa: R$ {{ melhor_fonte.valor_tarifa }}</p>
+    <p>Sustentável: {{ melhor_fonte.fonte.sustentavel }}</p>
+    {{ grafico_consumo|safe }}
+</body>
+</html>
