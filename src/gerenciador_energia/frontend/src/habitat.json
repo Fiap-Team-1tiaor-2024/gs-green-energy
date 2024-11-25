@@ -1,0 +1,38 @@
+
+{
+    "habitats": [ 
+        {
+            "id": 1,
+            "fonte": {
+                "id": 1,
+                "nome": "Solar",
+                "sustentavel": true,
+                "url_api": null
+            },
+            "nome": "Sala",
+            "data_hora": "2024-11-21T06:05:28.291250-03:00"
+        },
+        {
+            "id": 2,
+            "fonte": {
+                "id": 2,
+                "nome": "G�s",
+                "sustentavel": false,
+                "url_api": null
+            },
+            "nome": "cozinhaz",
+            "data_hora": "2024-11-21T06:05:47.630204-03:00"
+        },
+        {
+            "id": 3,
+            "fonte": {
+                "id": 2,
+                "nome": "G�s",
+                "sustentavel": false,
+                "url_api": null
+            },
+            "nome": "Quarto Casal",
+            "data_hora": "2024-11-21T07:50:35.062713-03:00"
+        }
+    ]
+}
