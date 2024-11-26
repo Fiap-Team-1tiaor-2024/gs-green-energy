@@ -1,10 +1,8 @@
 import {
   Admin,
   Resource,
-  ListGuesser,
-  EditGuesser,
-  ShowGuesser,
 } from "react-admin";
+import MyLayout from './MyLayout';
 import { Layout } from "./Layout";
 import { dataProvider } from "./dataProvider";
 import { authProvider } from "./authProvider";
@@ -15,7 +13,7 @@ import { TarifaList } from "./tarifas";
 
 export const App = () => (
   <Admin
-    layout={Layout}
+    layout={MyLayout}
     dataProvider={dataProvider}
     authProvider={authProvider}
   >

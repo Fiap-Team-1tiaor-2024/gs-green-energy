@@ -1,8 +1,5 @@
 import { DataProvider, fetchUtils } from "react-admin";
 import { stringify } from "query-string";
-import fakeRestDataProvider from "ra-data-fakerest";
-import data from "./data.json";
-import data from "./habitat.json";
 
 const apiUrl = 'http://localhost:8000/api';
 const httpClient = fetchUtils.fetchJson;
@@ -13,12 +10,15 @@ export const dataProvider: DataProvider = {
         const { page, perPage } = params.pagination;
         const { field, order } = params.sort;
         const query = {
+            ordering: `${order === 'DESC' ? '-' : ''}${field}`,
+            page: page,
+            page_size: perPage,
             sort: JSON.stringify([field, order]),
             range: JSON.stringify([(page - 1) * perPage, page * perPage - 1]),
             filter: JSON.stringify(params.filter),
         };
-        const url = `${apiUrl}/${resource}?${stringify(query)}`;
-        console.log(httpClient(url).then(({ headers , json }) => ( console.log(json) , console.log((headers.get('content-range') || "0").split('/').pop() || '0', 10)) ))
+        //const url = `${apiUrl}/${resource}?${stringify(query)}`;
+        const url = `${apiUrl}/${resource}?${fetchUtils.queryParameters(query)}`;
         const teste = [{ id: 1, nome: "sala"}] 
         return httpClient(url).then(({ headers, json }) => ({
             data: json,
